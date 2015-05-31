@@ -1,12 +1,9 @@
 package GUI.frame;
 
-import GUI.component.*;
+import DB.ScheduleList;
 import GUI.panel.JButtonPanel;
-import GUI.panel.JInputPanel;
 import GUI.panel.JScheduleFormPanel;
-import GUI.panel.JTablePanel;
 import action.ActionControllable;
-import main.CourseSchedule;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,22 +15,33 @@ public class MakeCourseSchedule extends JOperatorFrame{
     private JButtonPanel buttonPanel;
     private JScheduleFormPanel scheduleFormPanel;
 
-    public MakeCourseSchedule(String title, ActionControllable root) throws HeadlessException {
+    public MakeCourseSchedule(String title, ActionControllable root, ScheduleList db) throws HeadlessException {
         super(title, root);
         this.setSize(700, 500);
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setInterior(db, root);
         this.setVisible(true);
     }
 
-    private void setInterior(){
-        generatePanel();
-
+    private void setInterior(ScheduleList db, ActionControllable root){
+        this.buttonPanel = new JButtonPanel(root);
+        this.scheduleFormPanel = new JScheduleFormPanel(db, null);
+        this.setLayout(new BorderLayout());
+        this.add(buttonPanel, BorderLayout.EAST);
+        this.add(scheduleFormPanel, BorderLayout.CENTER);
     }
 
-    private void generatePanel() {
-        this.buttonPanel = new JButtonPanel(new GridLayout(4, 1), root);
-        this.scheduleFormPanel = new JScheduleFormPanel();
+    //about GUO I/O form value
+    public String[] getInputForm()
+    {
+        return this.scheduleFormPanel.getInputPanel().getInputForm();
+    }
+    public void setInputForm(String[] selectionForm){
+        this.scheduleFormPanel.getInputPanel().setInputForm(selectionForm);
+    }
+    public void updateTable(ScheduleList data){
+        this.scheduleFormPanel.getTablePanel().updateTable(data);
     }
 
 }

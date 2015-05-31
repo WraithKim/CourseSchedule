@@ -5,6 +5,7 @@ package main;
  */
 public class TestModule {
     public static void main(String[] args){
-
+        CourseSchedule testFrame = new CourseSchedule();
+        System.out.println("end");
     }
 }

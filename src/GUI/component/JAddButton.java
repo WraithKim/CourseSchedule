@@ -2,7 +2,6 @@ package GUI.component;
 
 import action.ActionControllable;
 import action.AddAction;
-import main.CourseSchedule;
 
 import javax.swing.*;
 
@@ -12,6 +11,7 @@ import javax.swing.*;
 public class JAddButton extends JButton{
     private AddAction addClicked;
     public JAddButton(ActionControllable root){
+        this.setText("Add");
         this.addClicked = new AddAction(root);
         this.addActionListener(addClicked);
     }

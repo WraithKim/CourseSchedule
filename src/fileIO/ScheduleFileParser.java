@@ -46,7 +46,7 @@ public class ScheduleFileParser {
         private void parseList(ArrayList<String> stringList) throws Exception
         {
             /** 파일의 행을 저장한 리스트에서 스케쥴을 추출한다. */
-            parsedLineList = new ArrayList<String[]>();
+            parsedLineList = new ArrayList<>();
             for(String line : stringList)
             {
                 parseLine(line);//파싱한 후 개수가 다르면 에러 반환 아니면 리스트에 넣음

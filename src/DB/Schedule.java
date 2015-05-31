@@ -6,10 +6,10 @@ package DB;
 public class Schedule {
     private String subject = null;
     private int credit = 0;
-    enum dayEnum{ mon, tue, wed, thu, fri, sat }
+    private enum dayEnum{ mon, tue, wed, thu, fri}
     private dayEnum day = null;
-    private int time2Begin = 0;
-    private int hour = 0;
+    private int startTime = 0;
+    private int hours = 0;
 
     /** setter method */
     void setSubject(String subject) {
@@ -31,7 +31,7 @@ public class Schedule {
     void parseDay(String str) throws Exception
     {
         /** 문자열에서 요일을 추출해서 설정한다 */
-        String temp = str.toLowerCase();//equals로 바꾸는 게 나을듯...
+        String temp = str.toLowerCase();
         switch(temp)
         {
             case "mon":
@@ -49,14 +49,11 @@ public class Schedule {
             case "fri":
                 this.day = dayEnum.fri;
                 break;
-            case "sat":
-                this.day = dayEnum.sat;
-                break;
             default:
                 throw new Exception("Unknown date -- "+str);
         }
     }//parseDay end
-    void parseTime(String str) throws Exception
+    void parseStartTime(String str) throws Exception
     {
         /** 문자열에서 시작 시간 추출해서 설정한다 */
         int temp;
@@ -75,10 +72,10 @@ public class Schedule {
         }
         else
         {
-            this.time2Begin = temp;
+            this.startTime = temp;
         }
     }//parseTime end
-    void parseHour(String str) throws Exception
+    void parseHours(String str) throws Exception
     {
         /** 문자열에서 연강수를 추출해서 설정한다 */
         int temp;
@@ -91,36 +88,42 @@ public class Schedule {
             throw new Exception("Unresolved hour -- "+str);
         }
 
-        if(temp <= 0 || temp + this.time2Begin > 9)
+        if(temp <= 0 || temp + this.startTime > 9)
         {
             throw new Exception("Out of bound of hour -- "+str);
         }
         else
         {
-            this.hour = temp;
+            this.hours = temp;
         }
     }//parseHour end
 
-
-
     /** getter method */
-    String getSubject() {
+    public String getSubject() {
         return subject;
     }
 
-    int getCredit() {
-        return credit;
+    public String getCredit() {
+        return Integer.toString(credit);
     }
 
-    dayEnum getDay() {
-        return day;
+    public String getDay() {
+        switch(day)
+        {
+            case mon: return "mon";
+            case tue: return "tue";
+            case wed: return "wed";
+            case thu: return "thu";
+            case fri: return "fri";
+        }
+        return null;
     }
 
-    int getTime2Begin() {
-        return time2Begin;
+    public String getStartTime() {
+        return Integer.toString(startTime);
     }
 
-    int getHour() {
-        return hour;
+    public String getHours() {
+        return Integer.toString(hours);
     }
 }
