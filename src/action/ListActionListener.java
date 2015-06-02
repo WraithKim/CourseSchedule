@@ -6,14 +6,15 @@ import java.awt.event.ActionListener;
 /**
  * Created by Donghwan on 2015-05-26.
  */
-public class AddAction implements ActionListener {
+public class ListActionListener implements ActionListener {
     private final ActionControllable parent;
-    public AddAction(ActionControllable root) {
+
+    public ListActionListener(ActionControllable root) {
         this.parent = root;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        parent.addSchedule();
+        parent.showList();
     }
 }

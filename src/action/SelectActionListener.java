@@ -7,10 +7,10 @@ import javax.swing.event.ListSelectionListener;
 /**
  * Created by Donghwan on 2015-05-26.
  */
-public class SelectAction implements ListSelectionListener{
+public class SelectActionListener implements ListSelectionListener{
     private final ActionControllable parent;
 
-    public SelectAction(ActionControllable root) {
+    public SelectActionListener(ActionControllable root) {
         this.parent = root;
     }
 

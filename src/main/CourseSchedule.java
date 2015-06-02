@@ -1,13 +1,13 @@
 package main;
 
-import DB.Schedule;
-import DB.ScheduleList;
-import GUI.frame.CourseList;
-import GUI.frame.MakeCourseSchedule;
+import db.Schedule;
+import db.ScheduleList;
+import gui.frame.CourseList;
+import gui.frame.MakeCourseSchedule;
 import action.ActionControllable;
-import fileIO.ScheduleFileParser;
-import fileIO.ScheduleFileReader;
-import fileIO.ScheduleFileWriter;
+import fileio.ScheduleFileParser;
+import fileio.ScheduleFileReader;
+import fileio.ScheduleFileWriter;
 
 import javax.swing.*;
 
@@ -16,15 +16,15 @@ import javax.swing.*;
  */
 public class CourseSchedule implements ActionControllable{
 
-    //GUI
+    //gui
     private MakeCourseSchedule mcs;
     private CourseList cl;
 
-    //DB
+    //db
     private ScheduleList clList;
     private ScheduleList mcsList;
 
-    //fileIO
+    //fileio
     private final String fileName = "courselist.data";
 
     public CourseSchedule() {

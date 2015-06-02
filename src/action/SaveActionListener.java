@@ -6,9 +6,10 @@ import java.awt.event.ActionListener;
 /**
  * Created by Donghwan on 2015-05-26.
  */
-public class SaveAction implements ActionListener {
+public class SaveActionListener implements ActionListener {
     private final ActionControllable parent;
-    public SaveAction(ActionControllable root) {
+
+    public SaveActionListener(ActionControllable root) {
        this.parent = root;
     }
 
