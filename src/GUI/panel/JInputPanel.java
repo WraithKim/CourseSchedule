@@ -1,7 +1,4 @@
-package GUI.panel;
-
-import GUI.component.JScheduleComboBox;
-import GUI.component.JScheduleTextField;
+package gui.panel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,26 +10,26 @@ public class JInputPanel extends JPanel{
     private final int row = 2;
     private final int col = 5;
 
-    /*if you revise these component, you need to revise Schedule, ScheduleList in DB package*/
+    /*if you revise these component, you need to revise Schedule, ScheduleList in db package*/
     private final JLabel subjectLabel = new JLabel("subject");
-    private JScheduleTextField subjectField;
+    private JTextField subjectField;
     private final JLabel creditLabel = new JLabel("credit");
-    private JScheduleTextField creditField;
+    private JTextField creditField;
     private final JLabel dayLabel = new JLabel("day");
-    private JScheduleComboBox dayComboBox;
+    private JComboBox dayComboBox;
     private final JLabel startTimeLabel = new JLabel("start time");
-    private JScheduleTextField startTimeField;
+    private JTextField startTimeField;
     private final JLabel hoursLabel = new JLabel("hours");
-    private JScheduleTextField hoursField;
+    private JTextField hoursField;
 
     public JInputPanel() {
         super();
         this.setLayout(new GridLayout(row, col));
-        subjectField = new JScheduleTextField();
-        creditField = new JScheduleTextField();
-        dayComboBox = new JScheduleComboBox(new String[]{"mon", "tue", "wed", "thu", "fri"});
-        startTimeField = new JScheduleTextField();
-        hoursField = new JScheduleTextField();
+        subjectField = new JTextField();
+        creditField = new JTextField();
+        dayComboBox = new JComboBox(new String[]{"mon", "tue", "wed", "thu", "fri"});
+        startTimeField = new JTextField();
+        hoursField = new JTextField();
 
         this.add(subjectLabel);
         this.add(creditLabel);

@@ -1,4 +1,4 @@
-package GUI.frame;
+package gui.frame;
 
 import action.ActionControllable;
 

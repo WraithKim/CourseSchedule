@@ -1,6 +1,6 @@
-package GUI.panel;
+package gui.panel;
 
-import DB.ScheduleList;
+import db.ScheduleList;
 import action.ActionControllable;
 
 import javax.swing.*;
@@ -22,11 +22,15 @@ public class JScheduleFormPanel extends JPanel{
         this.add(tablePanel, BorderLayout.CENTER);
     }
 
-    public JInputPanel getInputPanel(){
-       return this.inputPanel;
+    public void setInputForm(String[] selectForm){
+        this.inputPanel.setInputForm(selectForm);
     }
 
-    public JTablePanel getTablePanel() {
-        return tablePanel;
+    public String[] getInputForm(){
+        return inputPanel.getInputForm();
+    }
+
+    public void updateTable(ScheduleList data) {
+        tablePanel.updateTable(data);
     }
 }

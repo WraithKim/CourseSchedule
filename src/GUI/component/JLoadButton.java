@@ -1,7 +1,7 @@
-package GUI.component;
+package gui.component;
 
 import action.ActionControllable;
-import action.LoadAction;
+import action.LoadActionListener;
 
 import javax.swing.*;
 
@@ -9,10 +9,10 @@ import javax.swing.*;
  * Created by Donghwan on 2015-05-26.
  */
 public class JLoadButton extends JButton{
-    private final LoadAction loadClicked;
+    private final LoadActionListener loadClicked;
     public JLoadButton(ActionControllable root) {
         this.setText("Load");
-        this.loadClicked = new LoadAction(root);
+        this.loadClicked = new LoadActionListener(root);
         this.addActionListener(loadClicked);
     }
 }

@@ -1,10 +1,11 @@
-package GUI.frame;
+package gui.frame;
 
-import DB.ScheduleList;
-import GUI.panel.JTablePanel;
+import db.ScheduleList;
+import gui.panel.JTablePanel;
 import action.ActionControllable;
 
 import java.awt.*;
+
 
 /**
  * Created by Donghwan on 2015-05-26.

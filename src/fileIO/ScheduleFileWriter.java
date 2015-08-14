@@ -1,7 +1,7 @@
-package fileIO;
+package fileio;
 
-import DB.Schedule;
-import DB.ScheduleList;
+import db.Schedule;
+import db.ScheduleList;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,8 +1,8 @@
-package GUI.component;
+package gui.component;
 
-import DB.ScheduleList;
+import db.ScheduleList;
 import action.ActionControllable;
-import action.SelectAction;
+import action.SelectActionListener;
 
 import javax.swing.*;
 import javax.swing.table.*;
@@ -11,7 +11,7 @@ import javax.swing.table.*;
  * Created by Donghwan on 2015-05-26.
  */
 public class JScheduleTable extends JTable{
-    private SelectAction rowClicked;
+    private SelectActionListener rowClicked;
     private ScheduleTableModel tableModel;
 
     public JScheduleTable(ScheduleList scheduleList, ActionControllable root) {
@@ -21,7 +21,7 @@ public class JScheduleTable extends JTable{
         //action setting
         ListSelectionModel selectionModel = super.getSelectionModel();
         if(root != null) {
-            rowClicked = new SelectAction(root);
+            rowClicked = new SelectActionListener(root);
             selectionModel.addListSelectionListener(rowClicked);
         }
         selectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

@@ -1,6 +1,6 @@
-package fileIO;
+package fileio;
 
-import DB.ScheduleList;
+import db.ScheduleList;
 
 import java.util.ArrayList;
 

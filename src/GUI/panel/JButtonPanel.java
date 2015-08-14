@@ -1,9 +1,9 @@
-package GUI.panel;
+package gui.panel;
 
-import GUI.component.JAddButton;
-import GUI.component.JListButton;
-import GUI.component.JLoadButton;
-import GUI.component.JSaveButton;
+import gui.component.JAddButton;
+import gui.component.JListButton;
+import gui.component.JLoadButton;
+import gui.component.JSaveButton;
 import action.ActionControllable;
 
 import javax.swing.*;

@@ -1,8 +1,8 @@
-package GUI.frame;
+package gui.frame;
 
-import DB.ScheduleList;
-import GUI.panel.JButtonPanel;
-import GUI.panel.JScheduleFormPanel;
+import db.ScheduleList;
+import gui.panel.JButtonPanel;
+import gui.panel.JScheduleFormPanel;
 import action.ActionControllable;
 
 import javax.swing.*;
@@ -25,9 +25,11 @@ public class MakeCourseSchedule extends JOperatorFrame{
     }
 
     private void setInterior(ScheduleList db, ActionControllable root){
+        this.setLayout(new BorderLayout());
+
         this.buttonPanel = new JButtonPanel(root);
         this.scheduleFormPanel = new JScheduleFormPanel(db, null);
-        this.setLayout(new BorderLayout());
+
         this.add(buttonPanel, BorderLayout.EAST);
         this.add(scheduleFormPanel, BorderLayout.CENTER);
     }
@@ -35,13 +37,13 @@ public class MakeCourseSchedule extends JOperatorFrame{
     //about GUO I/O form value
     public String[] getInputForm()
     {
-        return this.scheduleFormPanel.getInputPanel().getInputForm();
+        return this.scheduleFormPanel.getInputForm();
     }
     public void setInputForm(String[] selectionForm){
-        this.scheduleFormPanel.getInputPanel().setInputForm(selectionForm);
+        this.scheduleFormPanel.setInputForm(selectionForm);
     }
     public void updateTable(ScheduleList data){
-        this.scheduleFormPanel.getTablePanel().updateTable(data);
+        this.scheduleFormPanel.updateTable(data);
     }
 
 }
